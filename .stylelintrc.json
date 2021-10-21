@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recess-order",
+    "stylelint-processor-styled-components",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "processor": [
+    ["stylelint-processor-styled-components", { "ignoreFiles": ["**/*.css", "**/*.scss"] }]
+  ]
+}

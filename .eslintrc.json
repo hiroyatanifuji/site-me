@@ -3,9 +3,7 @@
     "airbnb",
     "plugin:@typescript-eslint/recommended",
     "next/core-web-vitals",
-    "stylelint-config-standard",
-    "prettier",
-    "stylelint-config-prettier"
+    "prettier"
   ],
   "rules":  {
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
