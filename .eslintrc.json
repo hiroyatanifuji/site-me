@@ -9,6 +9,7 @@
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "max-len": ["error", { "code": 120, "ignoreComments": true, "ignoreStrings": true }],
     "@typescript-eslint/triple-slash-reference": "off",
+    "@typescript-eslint/no-namespace": "off",
     "react/jsx-props-no-spreading": "off"
   }
 }
