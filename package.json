@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fix": "npm run fix:eslint && npm run fix:prettier",
-    "fix:eslint": "eslint ./src/**/* --fix",
+    "fix": "npm run fix:eslint && npm run fix:stylelint && npm run fix:prettier",
+    "fix:eslint": "eslint ./src/**/*.{ts,tsx} --fix",
+    "fix:stylelint": "stylelint ./src/**/*",
     "fix:prettier": "prettier ./src/**/* --write"
   },
   "dependencies": {
@@ -27,6 +28,7 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.4.1",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recess-order": "^2.5.0",
