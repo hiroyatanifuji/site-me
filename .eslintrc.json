@@ -10,6 +10,8 @@
     "max-len": ["error", { "code": 120, "ignoreComments": true, "ignoreStrings": true }],
     "@typescript-eslint/triple-slash-reference": "off",
     "@typescript-eslint/no-namespace": "off",
-    "react/jsx-props-no-spreading": "off"
+    "@typescript-eslint/no-use-before-define": "error",
+    "react/jsx-props-no-spreading": "off",
+    "no-use-before-define": "off"
   }
 }
