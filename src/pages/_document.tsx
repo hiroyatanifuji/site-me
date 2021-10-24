@@ -13,10 +13,6 @@ const MyDocument = ({ styles }: Props) => (
       <link rel="shortcut icon" href="/images/icons/favicon.png" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta
-        content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no"
-        name="viewport"
-      />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       <meta name="apple-mobile-web-app-title" content="Hiroya Tanifuji" />
@@ -53,3 +49,5 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
     sheet.seal();
   }
 };
+
+export default MyDocument;
