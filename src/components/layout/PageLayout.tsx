@@ -6,7 +6,7 @@ import RequiredChildrenComponent from '../../types/RequiredChildrenComponent';
 
 const StyledDiv = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: ${ColorConstant.PRIMARY_COLOR};
 `;
 

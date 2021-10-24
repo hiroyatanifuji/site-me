@@ -8,7 +8,7 @@ import UserInfo from './UserInfo';
 const Styled = styled.section`
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin: 0 20px 20px 20px;
 `;
 
 const UserProfile: React.FunctionComponent<{ user: UserModel.User }> = ({ user }) => (

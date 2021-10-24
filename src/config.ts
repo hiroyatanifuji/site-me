@@ -3,7 +3,6 @@ namespace Config {
     return process.env[key] ?? null;
   }
 
-
   export const WEB_FRONT_URL = getEnvironmentVariable('WEB_FRONT_URL');
 }
 
