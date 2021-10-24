@@ -18,6 +18,9 @@
     "react/jsx-props-no-spreading": "off",
     "no-use-before-define": "off",
     "no-shadow": "off",
+    "no-useless-return": "off",
+    "no-else-return": "off",
+    "dot-notation": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
