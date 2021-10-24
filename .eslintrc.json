@@ -7,11 +7,26 @@
   ],
   "rules":  {
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/require-default-props": "off",
+    "react/destructuring-assignment": "off",
+    "react/no-unused-prop-types": "off",
     "max-len": ["error", { "code": 120, "ignoreComments": true, "ignoreStrings": true }],
     "@typescript-eslint/triple-slash-reference": "off",
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-use-before-define": "error",
+    "@typescript-eslint/no-shadow": "error",
     "react/jsx-props-no-spreading": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "no-shadow": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   }
 }

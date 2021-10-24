@@ -9,7 +9,7 @@
     "lint": "next lint",
     "fix": "npm run fix:eslint && npm run fix:stylelint && npm run fix:prettier",
     "fix:eslint": "eslint ./src/**/*.{ts,tsx} --fix",
-    "fix:stylelint": "stylelint ./src/**/*",
+    "fix:stylelint": "stylelint ./src/**/* --fix",
     "fix:prettier": "prettier ./src/**/* --write"
   },
   "dependencies": {
