@@ -15,9 +15,7 @@
     "value-keyword-case": [
       "lower",
       {
-        "ignoreKeywords": [],
-        "ignoreProperties": ["breakPoint", "defaultFont"],
-        "ignoreFunctions": []
+        "ignoreKeywords": ["/^theme.*/"]
       }
     ]
   }
