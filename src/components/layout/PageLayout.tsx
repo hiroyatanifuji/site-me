@@ -1,13 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
-import ColorConstant from '../../constants/color';
+import ColorTheme from '../../constants/color';
 import RequiredChildrenComponent from '../../types/RequiredChildrenComponent';
 
 const StyledDiv = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: ${ColorConstant.PRIMARY_COLOR};
+  background-color: ${ColorTheme.PRIMARY};
 `;
 
 const StyledSelection = styled.section`

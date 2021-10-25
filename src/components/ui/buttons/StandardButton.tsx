@@ -1,8 +1,8 @@
 import React from 'react';
 import Link, { LinkProps } from 'next/link';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import FontSize from '../../../constants/font';
-import ColorConstant from '../../../constants/color';
+import ColorTheme from '../../../constants/color';
 
 export enum ButtonType {
   FORM_BUTTON,
@@ -20,38 +20,29 @@ type AnchorTypeProps = { type: ButtonType.ANCHOR; href: string } & BaseProps;
 
 type ButtonProps = FormButtonTypeProps | SubmitButtonTypeProps | LinkTypeProps | AnchorTypeProps;
 
-const BaseCss = css`
+const StyledButton = styled.button<{ disabled: boolean }>`
   display: block;
   width: 250px;
   padding: 16px;
   font-size: ${FontSize.BUTTON_LABEL}px;
   font-weight: 500;
   line-height: 1.4;
-  color: ${ColorConstant.DEFAULT_FONT_COLOR};
+  color: ${ColorTheme.DEFAULT_FONT};
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   user-select: none;
-  background-color: ${ColorConstant.PRIMARY_COLOR};
-  border: solid 1px ${ColorConstant.DEFAULT_FONT_COLOR};
+  background-color: ${ColorTheme.PRIMARY};
+  border: solid 1px ${ColorTheme.DEFAULT_FONT};
   border-radius: 4px;
   outline: none;
   opacity: 1;
-`;
-
-const StyledButton = styled.button<{ disabled: boolean }>`
-  ${BaseCss}
-
-  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   opacity: ${props => (props.disabled ? 0.5 : 1.0)};
 `;
 
-const StyledA = styled.a<{ disabled: boolean }>`
-  ${BaseCss}
-
+const StyledA = styled(StyledButton.withComponent('a'))`
   pointer-events: ${props => (props.disabled ? 'none' : 'initial')};
-  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
-  opacity: ${props => (props.disabled ? 0.5 : 1.0)};
 `;
 
 const isFormButtonType = (props: ButtonProps): props is FormButtonTypeProps => props.type === ButtonType.FORM_BUTTON;
