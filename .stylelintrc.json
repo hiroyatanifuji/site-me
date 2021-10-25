@@ -10,5 +10,15 @@
   ],
   "processor": [
     ["stylelint-processor-styled-components", { "ignoreFiles": ["**/*.css", "**/*.scss"] }]
-  ]
+  ],
+  "rules": {
+    "value-keyword-case": [
+      "lower",
+      {
+        "ignoreKeywords": [],
+        "ignoreProperties": ["breakPoint", "defaultFont"],
+        "ignoreFunctions": []
+      }
+    ]
+  }
 }
