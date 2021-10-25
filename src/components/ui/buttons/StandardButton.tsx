@@ -1,8 +1,6 @@
 import React from 'react';
 import Link, { LinkProps } from 'next/link';
 import styled from 'styled-components';
-import FontSize from '../../../constants/font';
-import ColorTheme from '../../../constants/color';
 
 export enum ButtonType {
   FORM_BUTTON,
@@ -24,17 +22,16 @@ const StyledButton = styled.button<{ disabled: boolean }>`
   display: block;
   width: 250px;
   padding: 16px;
-  font-size: ${FontSize.BUTTON_LABEL}px;
-  font-weight: 500;
+  ${({ theme }) => theme.text.button1}
+
   line-height: 1.4;
-  color: ${ColorTheme.DEFAULT_FONT};
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   user-select: none;
-  background-color: ${ColorTheme.PRIMARY};
-  border: solid 1px ${ColorTheme.DEFAULT_FONT};
+  background-color: ${({ theme }) => theme.color.primary};
+  border: solid 1px ${({ theme }) => theme.color.defaultFont};
   border-radius: 4px;
   outline: none;
   opacity: 1;

@@ -2,6 +2,8 @@ import '../styles/globals.css';
 import '../styles/reset.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { ThemeProvider } from 'styled-components';
+import Theme from '../constants/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,7 +14,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
         />
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider theme={Theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
