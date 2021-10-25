@@ -6,7 +6,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<UserModel.User>)
     const user: UserModel.User = {
       iconUrl: '/images/icons/profile-icon.png',
       name: 'Hiroya Tanifuji',
-      info: 'Software Engineer',
+      info: '都内在住のソフトウェアエンジニアです\nTypescript / React / Next.js / Flutter が得意です',
     };
     res.status(200).json(user);
     return;

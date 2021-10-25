@@ -1,16 +1,26 @@
-import {css, DefaultTheme} from 'styled-components';
-import pxToVw from '../utils/pxToVw';
+import { css, DefaultTheme } from 'styled-components';
 
-const Color =  {
+const Color = {
   PRIMARY: '#000000',
   DEFAULT_FONT: '#ffffff',
-}
+};
+
+const BreakPoint = {
+  PHONE: 320,
+  TABLET: 520,
+  DESKTOP: 960,
+};
+
+const pxToVw = (px: number, baseWidth = BreakPoint.DESKTOP) => `${(px / baseWidth) * 100}vw`;
 
 const Theme: DefaultTheme = {
+  util: {
+    pxToVw,
+  },
   breakPoint: {
-    phone: 320,
-    tablet: 520,
-    desktop: 960,
+    phone: BreakPoint.PHONE,
+    tablet: BreakPoint.TABLET,
+    desktop: BreakPoint.DESKTOP,
   },
   color: {
     primary: Color.PRIMARY,
@@ -20,62 +30,62 @@ const Theme: DefaultTheme = {
 
   text: {
     headline1: css`
-      font-size: ${pxToVw(32)};
+      font-size: 32px;
       font-weight: bold;
       color: ${Color.DEFAULT_FONT};
     `,
     headline2: css`
-      font-size: ${pxToVw(28)};
+      font-size: 28px;
       font-weight: bold;
       color: ${Color.DEFAULT_FONT};
     `,
     headline3: css`
-      font-size: ${pxToVw(24)};
+      font-size: 24px;
       font-weight: bold;
       color: ${Color.DEFAULT_FONT};
     `,
     headline4: css`
-      font-size: ${pxToVw(20)};
+      font-size: 20px;
       font-weight: bold;
       color: ${Color.DEFAULT_FONT};
     `,
     headline5: css`
-      font-size: ${pxToVw(16)};
+      font-size: 16px;
       font-weight: bold;
       color: ${Color.DEFAULT_FONT};
     `,
     headline6: css`
-      font-size: ${pxToVw(14)};
+      font-size: 14px;
       font-weight: bold;
       color: ${Color.DEFAULT_FONT};
     `,
 
     bodyText1: css`
-      font-size: ${pxToVw(16)};
+      font-size: 16px;
       color: ${Color.DEFAULT_FONT};
     `,
     bodyText2: css`
-      font-size: ${pxToVw(14)};
+      font-size: 14px;
       color: ${Color.DEFAULT_FONT};
     `,
 
     subTitle1: css`
-      font-size: ${pxToVw(12)};
+      font-size: 12px;
       font-weight: bold;
       color: ${Color.DEFAULT_FONT};
     `,
     subTitle2: css`
-      font-size: ${pxToVw(10)};
+      font-size: 10px;
       font-weight: bold;
       color: ${Color.DEFAULT_FONT};
     `,
 
     button1: css`
-      font-size: ${pxToVw(14)};
+      font-size: 14px;
       font-weight: bold;
       color: ${Color.DEFAULT_FONT};
     `,
   },
 } as const;
 
-export default Theme
+export default Theme;

@@ -7,6 +7,6 @@ const Icon = styled(OptimizedImage)`
   object-fit: cover;
 `;
 
-const CircleAvatar: React.FunctionComponent<{ src: string }> = ({ src }) => <Icon src={src} width={50} height={50} />;
+const CircleAvatar: React.FunctionComponent<{ src: string }> = ({ src }) => <Icon src={src} width={100} height={100} />;
 
 export default CircleAvatar;

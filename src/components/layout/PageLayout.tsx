@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
 `;
 
 const StyledSelection = styled.section`
-  max-width: 375px;
+  max-width: ${({ theme }) => theme.breakPoint.desktop};
   margin: 0 auto;
 `;
 

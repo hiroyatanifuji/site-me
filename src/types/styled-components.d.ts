@@ -2,6 +2,9 @@ import 'styled-components';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
+    util: {
+      pxToVw: (px: number, baseWidth?: number) => string;
+    };
     breakPoint: {
       phone: number;
       tablet: number;
