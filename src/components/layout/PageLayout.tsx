@@ -12,6 +12,7 @@ const StyledDiv = styled.div`
 const StyledSelection = styled.section`
   max-width: ${({ theme }) => theme.breakPoint.desktop};
   margin: 0 auto;
+  padding: 0 20px;
 `;
 
 const PageLayout: RequiredChildrenComponent<{ title: string }> = ({ title, children }) => (

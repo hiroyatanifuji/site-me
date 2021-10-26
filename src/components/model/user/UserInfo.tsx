@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Paragraph from '../../ui/text/Paragraph';
 
 const Styled = styled.div`
-  padding: 10px;
+  padding: 10px 0;
 `;
 
 const UserInfo: React.FunctionComponent = ({ children }) => (
