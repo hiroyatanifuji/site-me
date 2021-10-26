@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Paragraph from '../../ui/text/Paragraph';
+import Paragraph, { TextAlign } from '../../ui/text/Paragraph';
 
 const Styled = styled.div`
   padding: 10px 0;
@@ -8,7 +8,7 @@ const Styled = styled.div`
 
 const UserInfo: React.FunctionComponent = ({ children }) => (
   <Styled>
-    <Paragraph>{children}</Paragraph>
+    <Paragraph align={TextAlign.CENTER}>{children}</Paragraph>
   </Styled>
 );
 

@@ -9,7 +9,7 @@ export enum ButtonType {
   ANCHOR,
 }
 
-type BaseProps = { label: string; disabled?: boolean };
+type BaseProps = { label: string; disabled?: boolean; className?: string };
 
 type FormButtonTypeProps = { type: ButtonType.FORM_BUTTON; onClick: () => void } & BaseProps;
 type SubmitButtonTypeProps = { type: ButtonType.SUBMIT_BUTTON } & BaseProps;
@@ -20,22 +20,24 @@ type ButtonProps = FormButtonTypeProps | SubmitButtonTypeProps | LinkTypeProps |
 
 const StyledButton = styled.button<{ disabled: boolean }>`
   display: block;
-  width: 250px;
+  width: 230px;
   padding: 16px;
   ${({ theme }) => theme.text.button1}
 
   line-height: 1.4;
   text-align: center;
   text-decoration: none;
-  cursor: pointer;
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   user-select: none;
   background-color: ${({ theme }) => theme.color.primary};
   border: solid 1px ${({ theme }) => theme.color.defaultFont};
   border-radius: 4px;
   outline: none;
-  opacity: 1;
   opacity: ${props => (props.disabled ? 0.5 : 1.0)};
+
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 const StyledA = styled(StyledButton.withComponent('a'))`
@@ -68,18 +70,26 @@ const StandardButton: React.FunctionComponent<ButtonProps> = props => (
   <>
     {isFormButtonType(props) && <ButtonTypeButton {...props} />}
     {isSubmitButtonType(props) && (
-      <StyledButton disabled={props.disabled ?? false} type="submit">
+      <StyledButton disabled={props.disabled ?? false} type="submit" className={props.className}>
         {props.label}
       </StyledButton>
     )}
     {isLinkType(props) &&
       (({ label, disabled = false, ...linkProps }: LinkTypeProps) => (
         <Link {...linkProps}>
-          <StyledA disabled={disabled}>{props.label}</StyledA>
+          <StyledA disabled={disabled} className={props.className}>
+            {props.label}
+          </StyledA>
         </Link>
       ))(props)}
     {isAnchorType(props) && (
-      <StyledA disabled={props.disabled ?? false} target="_blank" rel="noopener noreferrer" href={props.href}>
+      <StyledA
+        disabled={props.disabled ?? false}
+        target="_blank"
+        rel="noopener noreferrer"
+        href={props.href}
+        className={props.className}
+      >
         {props.label}
       </StyledA>
     )}

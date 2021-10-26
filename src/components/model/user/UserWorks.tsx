@@ -24,11 +24,11 @@ const StyledPostListTile = styled(PostListTile)`
   margin-bottom: 10px;
 `;
 
-const UserPosts: React.FunctionComponent<{ data: (React.ComponentProps<typeof PostListTile> & { id: number })[] }> = ({
+const UserWorks: React.FunctionComponent<{ data: (React.ComponentProps<typeof PostListTile> & { id: number })[] }> = ({
   data,
 }) => (
   <StyledSection>
-    <SubTitle title="Recent Posts" />
+    <SubTitle title="Recent Works" />
     <PostList>
       {data.map(({ id, type, href, thumbnailUrl, title }) => (
         <StyledPostListTile key={id} type={type} href={href} thumbnailUrl={thumbnailUrl} title={title} />
@@ -37,4 +37,4 @@ const UserPosts: React.FunctionComponent<{ data: (React.ComponentProps<typeof Po
   </StyledSection>
 );
 
-export default UserPosts;
+export default UserWorks;
