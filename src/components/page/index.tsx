@@ -6,7 +6,7 @@ import UserProfile from '../model/user/UserProfile';
 import UserModel from '../../models/user';
 import Config from '../../config';
 import UserLinks from '../model/user/UserLinks';
-
+import UserPosts from '../model/user/UserPosts';
 
 type GetStaticPropsDataType = { user: UserModel.User | null };
 
@@ -23,12 +23,12 @@ const StyledDiv = styled.div`
   flex-direction: column;
 `;
 
-
 const TopPageComponent: React.FunctionComponent<Props> = ({ user }) => (
   <PageLayout title="Hiroya Tanifuji">
     <StyledDiv>
       <UserProfile user={user ?? NoUser} />
-      <UserLinks/>
+      <UserLinks />
+      <UserPosts />
     </StyledDiv>
   </PageLayout>
 );

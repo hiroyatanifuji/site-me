@@ -12,8 +12,8 @@ declare module 'styled-components' {
     };
     color: {
       primary: string;
-
       defaultFont: string;
+      defaultBorderColor: string;
     };
     text: {
       headline1: FlattenSimpleInterpolation;
