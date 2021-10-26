@@ -70,13 +70,11 @@ const Theme: DefaultTheme = {
     `,
 
     subTitle1: css`
-      font-size: 12px;
-      font-weight: bold;
+      font-size: 13px;
       color: ${Color.DEFAULT_FONT};
     `,
     subTitle2: css`
       font-size: 10px;
-      font-weight: bold;
       color: ${Color.DEFAULT_FONT};
     `,
 
