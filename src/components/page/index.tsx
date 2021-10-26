@@ -4,7 +4,7 @@ import { GetStaticPropsContext, GetStaticPropsResult, InferGetStaticPropsType } 
 import PageLayout from '../layout/PageLayout';
 import UserProfile from '../model/user/UserProfile';
 import UserModel from '../../models/user';
-import Config from '../../config';
+// import Config from '../../config';
 import UserLinks, { ButtonType } from '../model/user/UserLinks';
 import UserPosts, { LinkType } from '../model/user/UserPosts';
 import UserWorks from '../model/user/UserWorks';
@@ -121,15 +121,16 @@ const TopPageComponent: React.FunctionComponent<Props> = ({ user }) => (
 export const getStaticProps = async (
   _: GetStaticPropsContext,
 ): Promise<GetStaticPropsResult<GetStaticPropsDataType>> => {
-  const res = await fetch(`${Config.WEB_FRONT_URL}/api/user`, {
-    mode: 'cors',
-  });
-  if (!res.ok || res.status !== 200) {
-    return { props: { user: null } };
-  } else {
-    const user = await res.json();
-    return { props: { user } };
-  }
+  return { props: { user: null } };
+  // const res = await fetch(`${Config.WEB_FRONT_URL}/api/user`, {
+  //   mode: 'cors',
+  // });
+  // if (!res.ok || res.status !== 200) {
+  //   return { props: { user: null } };
+  // } else {
+  //   const user = await res.json();
+  //   return { props: { user } };
+  // }
 };
 
 export default TopPageComponent;
