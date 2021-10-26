@@ -3,28 +3,40 @@ import styled from 'styled-components';
 import StandardButton, { ButtonType } from '../../ui/button/StandardButton';
 import SubTitle from '../../ui/text/SubTitle';
 
+export { ButtonType } from '../../ui/button/StandardButton';
+
+type StandardButtonProps = React.ComponentProps<typeof StandardButton>;
+
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 30px;
 `;
 
-const StyledDiv = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 16px;
+const StyledButton = styled(StandardButton)<StandardButtonProps>`
+  margin-right: 10px;
+  margin-bottom: 10px;
 `;
 
-const UserLink: React.FunctionComponent = () => (
+const UserLinks: React.FunctionComponent<{
+  data: ((StandardButtonProps & { type: ButtonType.LINK | ButtonType.ANCHOR }) & { id: number })[];
+}> = ({ data }) => (
   <StyledSection>
-    <SubTitle title="Links" />
-    <StyledDiv>
-      <StandardButton type={ButtonType.ANCHOR} label="Github" href="https://github.com/hiroyatanifuji" />
-      <StandardButton type={ButtonType.ANCHOR} label="Twitter" href="https://twitter.com/HiroIot" />
-      <StandardButton type={ButtonType.ANCHOR} label="Facebook" href="https://facebook.com/hiroyatanifuji" />
-      <StandardButton type={ButtonType.ANCHOR} label="Resume" href="https://www.resume.id/hiroya_tanifuji" />
-    </StyledDiv>
+    <SubTitle title="Socials &amp; Links" />
+    <ButtonsContainer>
+      {data.map(({ id, type, label, href }) => (
+        <StyledButton key={id} type={type} label={label} href={href as string} />
+      ))}
+    </ButtonsContainer>
   </StyledSection>
 );
 
-export default UserLink;
+export default UserLinks;

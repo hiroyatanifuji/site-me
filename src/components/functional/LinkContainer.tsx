@@ -24,6 +24,10 @@ const isAnchorLinkType = (props: Props): props is AnchorLinkTypeProps => {
 
 const StyledA = styled.a<{ disabled: boolean }>`
   pointer-events: ${props => (props.disabled ? 'none' : 'initial')};
+
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 const LinkContainer: RequiredChildrenComponent<Props> = props => (
