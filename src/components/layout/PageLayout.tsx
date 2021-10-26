@@ -5,14 +5,14 @@ import RequiredChildrenComponent from '../../types/RequiredChildrenComponent';
 
 const StyledDiv = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: ${({ theme }) => theme.color.primary};
 `;
 
 const StyledSelection = styled.section`
   max-width: ${({ theme }) => theme.breakPoint.desktop};
-  margin: 0 auto;
   padding: 0 20px;
+  margin: 0 auto;
 `;
 
 const PageLayout: RequiredChildrenComponent<{ title: string }> = ({ title, children }) => (

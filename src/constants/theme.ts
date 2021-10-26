@@ -3,6 +3,7 @@ import { css, DefaultTheme } from 'styled-components';
 const Color = {
   PRIMARY: '#000000',
   DEFAULT_FONT: '#ffffff',
+  DEFAULT_BORDER: '#303d3a',
 };
 
 const BreakPoint = {
@@ -24,10 +25,9 @@ const Theme: DefaultTheme = {
   },
   color: {
     primary: Color.PRIMARY,
-
     defaultFont: Color.DEFAULT_FONT,
+    defaultBorderColor: Color.DEFAULT_BORDER,
   },
-
   text: {
     headline1: css`
       font-size: 32px;
