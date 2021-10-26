@@ -81,7 +81,7 @@ const Theme: DefaultTheme = {
     `,
 
     button1: css`
-      font-size: 14px;
+      font-size: 13px;
       font-weight: bold;
       color: ${Color.DEFAULT_FONT};
     `,

@@ -11,24 +11,26 @@ const StyledSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  width: 200px;
-  height: 240px;
-  border: solid 1px ${({ theme }) => theme.color.defaultBorderColor};
+  width: 240px;
+  height: 280px;
+  border: solid 2px ${({ theme }) => theme.color.defaultBorderColor};
   border-radius: 4px;
 `;
 
 const StyledDiv = styled.div`
-  padding: 8px 8px 0 8px;
+  width: 240px;
+  height: 150px;
+  padding: 10px;
 `;
 
 type LinkContainerProps = React.ComponentProps<typeof LinkContainer>;
 
-type Props = Omit<LinkContainerProps, 'children'> & { thumbnailUrl: string; title: string };
+type Props = Omit<LinkContainerProps, 'children'> & { thumbnailUrl: string; title: string; className?: string };
 
 const PostListTile: React.FunctionComponent<Props> = props => (
   <LinkContainer {...(props as LinkContainerProps)}>
-    <StyledSection>
-      <OptimizedImage src={props.thumbnailUrl} width={200} height={100} />
+    <StyledSection className={props.className}>
+      <OptimizedImage src={props.thumbnailUrl} width={240} height={130} />
       <StyledDiv>
         <Paragraph>{props.title}</Paragraph>
       </StyledDiv>
