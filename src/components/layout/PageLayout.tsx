@@ -12,7 +12,7 @@ const StyledDiv = styled.div`
   background-color: ${({ theme }) => theme.color.primary};
 `;
 
-const StyledMain = styled.main`
+const Main = styled.main`
   flex: 1;
   max-width: ${({ theme }) => theme.breakPoint.desktop}px;
   padding: 0 20px;
@@ -20,13 +20,15 @@ const StyledMain = styled.main`
 `;
 
 const PageLayout: RequiredChildrenComponent<{ title: string }> = ({ title, children }) => (
-  <StyledDiv>
+  <>
     <Head>
       <title>{title}</title>
     </Head>
-    <StyledMain>{children}</StyledMain>
-    <Footer />
-  </StyledDiv>
+    <StyledDiv>
+      <Main>{children}</Main>
+      <Footer />
+    </StyledDiv>
+  </>
 );
 
 export default PageLayout;

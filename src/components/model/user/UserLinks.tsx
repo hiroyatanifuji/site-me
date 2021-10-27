@@ -22,8 +22,10 @@ const ButtonsContainer = styled.div`
 `;
 
 const StyledButton = styled(StandardButton)<StandardButtonProps>`
-  margin-right: 10px;
   margin-bottom: 10px;
+  @media ${({ theme }) => theme.media.tablet} {
+    margin-right: 10px;
+  }
 `;
 
 const UserLinks: React.FunctionComponent<{

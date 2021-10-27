@@ -20,8 +20,10 @@ const PostList = styled.div`
 `;
 
 const StyledPostListTile = styled(PostListTile)`
-  margin-right: 10px;
   margin-bottom: 10px;
+  @media ${({ theme }) => theme.media.tablet} {
+    margin-right: 10px;
+  }
 `;
 
 const UserWorks: React.FunctionComponent<{ data: (React.ComponentProps<typeof PostListTile> & { id: number })[] }> = ({

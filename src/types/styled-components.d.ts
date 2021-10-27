@@ -17,7 +17,7 @@ declare module 'styled-components' {
     media: {
       tablet: Media;
       desktop: Media;
-    },
+    };
     color: {
       primary: Color;
       defaultFont: Color;
