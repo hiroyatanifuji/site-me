@@ -4,7 +4,7 @@ const Color = {
   PRIMARY: '#000000',
   DEFAULT_FONT: '#ffffff',
   DEFAULT_BORDER: '#303d3a',
-};
+} as const;
 
 const BreakPoint = {
   PHONE: 320,
@@ -22,6 +22,10 @@ const Theme: DefaultTheme = {
     phone: BreakPoint.PHONE,
     tablet: BreakPoint.TABLET,
     desktop: BreakPoint.DESKTOP,
+  },
+  media: {
+    tablet: `(min-width: ${BreakPoint.TABLET}px)`,
+    desktop: `(min-width: ${BreakPoint.DESKTOP}px)`,
   },
   color: {
     primary: Color.PRIMARY,

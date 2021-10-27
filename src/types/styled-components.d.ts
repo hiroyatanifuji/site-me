@@ -1,5 +1,9 @@
 import 'styled-components';
 
+type Color = `#${string}` | `rgba(${number}, ${number}, ${number}, ${number})`;
+
+type Media = `(min-width: ${number}px)`;
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     util: {
@@ -10,10 +14,14 @@ declare module 'styled-components' {
       tablet: number;
       desktop: number;
     };
+    media: {
+      tablet: Media;
+      desktop: Media;
+    },
     color: {
-      primary: string;
-      defaultFont: string;
-      defaultBorderColor: string;
+      primary: Color;
+      defaultFont: Color;
+      defaultBorderColor: Color;
     };
     text: {
       headline1: FlattenSimpleInterpolation;
