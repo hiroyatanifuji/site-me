@@ -2,16 +2,18 @@ import React from 'react';
 import Link, { LinkProps } from 'next/link';
 import styled from 'styled-components';
 import RequiredChildrenComponent from '../../types/RequiredChildrenComponent';
+import ValueOf from '../../types/ValueOf';
 
-export enum LinkType {
-  NEXT_LINK,
-  ANCHOR_LINK,
-}
+export const LinkType = {
+  NEXT_LINK: 'next',
+  ANCHOR_LINK: 'anchor',
+} as const;
+type TLinkType = ValueOf<typeof LinkType>;
 
-type BaseProps = { type: LinkType; disabled?: boolean };
+type BaseProps = { type: TLinkType; disabled?: boolean };
 
-type NextLinkTypeProps = { type: LinkType.NEXT_LINK } & LinkProps & BaseProps;
-type AnchorLinkTypeProps = { type: LinkType.ANCHOR_LINK; href: string } & BaseProps;
+type NextLinkTypeProps = { type: typeof LinkType.NEXT_LINK } & LinkProps & BaseProps;
+type AnchorLinkTypeProps = { type: typeof LinkType.ANCHOR_LINK; href: string } & BaseProps;
 
 type Props = NextLinkTypeProps | AnchorLinkTypeProps;
 

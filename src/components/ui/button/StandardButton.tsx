@@ -2,19 +2,19 @@ import React from 'react';
 import Link, { LinkProps } from 'next/link';
 import styled from 'styled-components';
 
-export enum ButtonType {
-  FORM_BUTTON,
-  SUBMIT_BUTTON,
-  LINK,
-  ANCHOR,
-}
+export const ButtonType = {
+  FORM_BUTTON: 'form',
+  SUBMIT_BUTTON: 'submit',
+  LINK: 'link',
+  ANCHOR: 'anchor',
+} as const;
 
 type BaseProps = { label: string; disabled?: boolean; className?: string };
 
-type FormButtonTypeProps = { type: ButtonType.FORM_BUTTON; onClick: () => void } & BaseProps;
-type SubmitButtonTypeProps = { type: ButtonType.SUBMIT_BUTTON } & BaseProps;
-type LinkTypeProps = { type: ButtonType.LINK } & LinkProps & BaseProps;
-type AnchorTypeProps = { type: ButtonType.ANCHOR; href: string } & BaseProps;
+type FormButtonTypeProps = { type: typeof ButtonType.FORM_BUTTON; onClick: () => void } & BaseProps;
+type SubmitButtonTypeProps = { type: typeof ButtonType.SUBMIT_BUTTON } & BaseProps;
+type LinkTypeProps = { type: typeof ButtonType.LINK } & LinkProps & BaseProps;
+type AnchorTypeProps = { type: typeof ButtonType.ANCHOR; href: string } & BaseProps;
 
 type ButtonProps = FormButtonTypeProps | SubmitButtonTypeProps | LinkTypeProps | AnchorTypeProps;
 
