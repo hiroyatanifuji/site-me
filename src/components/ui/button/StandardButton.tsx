@@ -1,6 +1,6 @@
 import React from 'react';
-import Link, { LinkProps } from 'next/link';
 import styled from 'styled-components';
+import TypedLink, { TypedLinkProps } from '../../functional/TypedLink';
 
 export const ButtonType = {
   FORM_BUTTON: 'form',
@@ -13,7 +13,7 @@ type BaseProps = { label: string; disabled?: boolean; className?: string };
 
 type FormButtonTypeProps = { type: typeof ButtonType.FORM_BUTTON; onClick: () => void } & BaseProps;
 type SubmitButtonTypeProps = { type: typeof ButtonType.SUBMIT_BUTTON } & BaseProps;
-type LinkTypeProps = { type: typeof ButtonType.LINK } & LinkProps & BaseProps;
+type LinkTypeProps = { type: typeof ButtonType.LINK } & TypedLinkProps & BaseProps;
 type AnchorTypeProps = { type: typeof ButtonType.ANCHOR; href: string } & BaseProps;
 
 type ButtonProps = FormButtonTypeProps | SubmitButtonTypeProps | LinkTypeProps | AnchorTypeProps;
@@ -76,11 +76,11 @@ const StandardButton: React.FunctionComponent<ButtonProps> = props => (
     )}
     {isLinkType(props) &&
       (({ label, disabled = false, ...linkProps }: LinkTypeProps) => (
-        <Link {...linkProps}>
+        <TypedLink {...linkProps}>
           <StyledA disabled={disabled} className={props.className}>
             {props.label}
           </StyledA>
-        </Link>
+        </TypedLink>
       ))(props)}
     {isAnchorType(props) && (
       <StyledA

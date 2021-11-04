@@ -1,8 +1,8 @@
 import React from 'react';
-import Link, { LinkProps } from 'next/link';
 import styled from 'styled-components';
 import RequiredChildrenComponent from '../../types/RequiredChildrenComponent';
 import ValueOf from '../../types/ValueOf';
+import TypedLink, { TypedLinkProps } from './TypedLink';
 
 export const LinkType = {
   NEXT_LINK: 'next',
@@ -12,7 +12,7 @@ type TLinkType = ValueOf<typeof LinkType>;
 
 type BaseProps = { type: TLinkType; disabled?: boolean };
 
-type NextLinkTypeProps = { type: typeof LinkType.NEXT_LINK } & LinkProps & BaseProps;
+type NextLinkTypeProps = { type: typeof LinkType.NEXT_LINK } & TypedLinkProps & BaseProps;
 type AnchorLinkTypeProps = { type: typeof LinkType.ANCHOR_LINK; href: string } & BaseProps;
 
 type Props = NextLinkTypeProps | AnchorLinkTypeProps;
@@ -36,9 +36,9 @@ const LinkContainer: RequiredChildrenComponent<Props> = props => (
   <>
     {isNextLinkType(props) &&
       (({ disabled, ...linkProps }) => (
-        <Link {...linkProps}>
+        <TypedLink {...linkProps}>
           <StyledA disabled={disabled ?? false}>{props.children}</StyledA>
-        </Link>
+        </TypedLink>
       ))(props)}
     {isAnchorLinkType(props) && (
       <StyledA disabled={props.disabled ?? false} target="_blank" rel="noopener noreferrer" href={props.href}>
