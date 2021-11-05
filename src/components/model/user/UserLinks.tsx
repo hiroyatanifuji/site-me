@@ -21,7 +21,7 @@ const ButtonsContainer = styled.div`
   margin-top: 30px;
 `;
 
-const StyledButton = styled(StandardButton)<StandardButtonProps>`
+const ButtonContainer = styled.div`
   margin-bottom: 10px;
   @media ${({ theme }) => theme.media.tablet} {
     margin-right: 10px;
@@ -29,13 +29,15 @@ const StyledButton = styled(StandardButton)<StandardButtonProps>`
 `;
 
 const UserLinks: React.FunctionComponent<{
-  data: ((StandardButtonProps & { type: ButtonType.LINK | ButtonType.ANCHOR }) & { id: number })[];
+  data: (StandardButtonProps & { type: typeof ButtonType.LINK | typeof ButtonType.ANCHOR, id: number} )[];
 }> = ({ data }) => (
   <StyledSection>
     <SubTitle title="Socials &amp; Links" />
     <ButtonsContainer>
-      {data.map(({ id, type, label, href }) => (
-        <StyledButton key={id} type={type} label={label} href={href as string} />
+      {data.map((props) => (
+        <ButtonContainer key={props.id}>
+          <StandardButton {...props}/>
+        </ButtonContainer>
       ))}
     </ButtonsContainer>
   </StyledSection>
